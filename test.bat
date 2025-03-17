@@ -1,3 +1,6 @@
 @echo off
-powershell -Command "Start-Process cleanmgr -Verb RunAs"
+for %%i in (unnstall_onedrive.ps1) do (
+    powershell -ExecutionPolicy Bypass -File "%%i"
+)
+
 pause
