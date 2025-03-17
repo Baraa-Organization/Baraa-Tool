@@ -26,7 +26,7 @@ echo ------------------------------------
 echo 1 - Upgrade all installed apps
 echo 2 - Install Applications
 echo 3 - Uninstall Applications
-echo 4 - Full System Scan
+echo 4 - Scan/Cleanup
 echo 0 - Exit
 echo.
 set /p program=Choose an option: 
@@ -51,6 +51,10 @@ goto :main
 :scan
 cls
 color 0a
+
+cleanmgr /sageset:1
+echo Check it all for smoother expierence ";)"
+pause
 
 sfc /scannow
 DISM /Online /Cleanup-Image /CheckHealth
