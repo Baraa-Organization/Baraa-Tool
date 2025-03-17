@@ -27,6 +27,7 @@ echo 1 - Upgrade all installed apps
 echo 2 - Install Applications
 echo 3 - Uninstall Applications
 echo 4 - Scan/Cleanup
+echo 5 - onedrive/edge
 echo 0 - Exit
 echo.
 set /p program=Choose an option: 
@@ -35,6 +36,7 @@ if "%program%"=="1" goto :upgrade
 if "%program%"=="2" goto :install
 if "%program%"=="3" goto :uninstall
 if "%program%"=="4" goto :scan
+if "%program%"=="5" goto :onedrive/edge
 if "%program%"=="0" goto :end
 goto :main
 
@@ -85,6 +87,7 @@ echo 14 - LibreOffice
 echo 15 - Revo Uninstaller
 echo 16 - WinRAR
 echo 17 - GitHub Desktop
+echo 18 - Oracle VirtualBox
 echo 100 - Install All (not recommended)
 echo 0 - Back to menu
 echo --------------------------------------
@@ -115,6 +118,7 @@ if "%~1"=="14" set app=TheDocumentFoundation.LibreOffice
 if "%~1"=="15" set app=RevoUninstaller.RevoUninstaller
 if "%~1"=="16" set app=RARLab.WinRAR
 if "%~1"=="17" set app=GitHub.GitHubDesktop
+if "%~1"=="18" set app=Oracle.VirtualBox
 if not "%app%"=="" (
     echo Installing !app!
     winget install -e --id !app!
@@ -154,6 +158,7 @@ echo 14 - LibreOffice
 echo 15 - Revo Uninstaller
 echo 16 - WinRAR
 echo 17 - GitHub Desktop
+echo 18 - Oracle VirtualBox
 echo 100 - Uninstall All (not recommended)
 echo 0 - Back to menu
 echo --------------------------------------
@@ -184,6 +189,7 @@ if "%~1"=="14" set app=TheDocumentFoundation.LibreOffice
 if "%~1"=="15" set app=RevoUninstaller.RevoUninstaller
 if "%~1"=="16" set app=RARLab.WinRAR
 if "%~1"=="17" set app=GitHub.GitHubDesktop
+if "%~1"=="18" set app=Oracle.VirtualBox
 if not "%app%"=="" (
     echo Uninstalling !app!
     winget uninstall -e --id !app!
@@ -200,6 +206,15 @@ for %%A in (Discord.Discord Logitech.GHUB Proton.ProtonVPN Oracle.JavaRuntimeEnv
 )
 pause
 goto :main
+
+:onedrive/edge
+
+for %%i in (unnstall_onedrive.ps1) do (
+    powershell -ExecutionPolicy Bypass -File "%%i"
+)
+
+
+
 
 :end
 echo Press Enter to exit
