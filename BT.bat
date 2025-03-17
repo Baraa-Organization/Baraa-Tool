@@ -106,7 +106,7 @@ if "%~1"=="9" set app=OBSProject.OBSStudio
 if "%~1"=="10" set app=Valve.Steam
 if "%~1"=="11" set app=Microsoft.VisualStudio.2022.Community
 if "%~1"=="12" set app=Microsoft.VisualStudioCode
-if "%~1"=="13" set app=Microsoft.VisualStudioCode
+if "%~1"=="13" set app=AnyDeskSoftwareGmbH.AnyDesk
 if "%~1"=="14" set app=TheDocumentFoundation.LibreOffice
 if "%~1"=="15" set app=RevoUninstaller.RevoUninstaller
 if "%~1"=="16" set app=RARLab.WinRAR
