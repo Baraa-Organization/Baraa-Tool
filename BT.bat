@@ -208,14 +208,17 @@ pause
 goto :main
 
 :onedrive/edge
-
-for %%i in (unnstall_onedrive.ps1) do (
-    powershell -ExecutionPolicy Bypass -File "%%i"
-)
+cls
+echo disaple onedrive 
 
 
+powershell -Command "(Get-ChildItem -Path C:\ -Filter test.bat -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName | ForEach-Object { Start-Process -FilePath $_ })"
 
 
+
+pause
+
+goto :main
 :end
 echo Press Enter to exit
 pause
